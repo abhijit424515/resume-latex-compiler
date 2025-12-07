@@ -236,13 +236,19 @@ case "${1:-}" in
     
     watch)
         if [ -z "${2:-}" ] || [ "${2:-}" = "all" ]; then
-            print_info "Watching all folders with .tex files..."
+            print_info "Building all folders with .tex files before watching..."
             folders=$(find_tex_folders)
             if [ -z "$folders" ]; then
                 print_error "No folders with .tex files found"
                 exit 1
             fi
             
+            # Build all folders first
+            for folder in $folders; do
+                build_folder "$folder" || true
+            done
+            
+            print_info "Watching all folders with .tex files..."
             print_warn "Watching entire project for .tex file changes..."
             print_warn "Press Ctrl+C to stop watching"
             
@@ -290,6 +296,10 @@ case "${1:-}" in
                 print_error "Folder must be within project root: $PROJECT_ROOT"
                 exit 1
             fi
+            
+            # Build folder first before watching
+            print_info "Building folder before watching..."
+            build_folder "$folder_path" || true
             
             watch_folder "$folder_path"
         fi
