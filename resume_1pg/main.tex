@@ -1,0 +1,249 @@
+\documentclass[10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\usepackage[a4paper,bottom=6mm,left=14.11mm,right=14.11mm,top=7mm]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage[table, svgnames]{xcolor}
+\usepackage{hyphenat}
+\usepackage{romannum}
+\usepackage{anyfontsize}
+\usepackage{fontawesome5}
+% \usepackage[empty]{fullpage}
+% \usepackage[usenames,dvipsnames]{color}
+\usepackage{hyperref}
+\usepackage[misc]{ifsym}
+\usepackage{array}
+\usepackage{fontspec}
+
+% Fonts
+\newfontfamily\notoserif{Noto Serif}
+\newfontfamily\notoserifBold{Noto Serif SemiBold}
+
+\setlength{\parindent}{0pt}
+\hyphenpenalty 10000
+
+%%%%%%% Command for Thick hline %%%%%%%%%%
+\makeatletter
+\newcommand{\thickhline}{%
+    \noalign {\ifnum 0=`}\fi \hrule height 0.7pt
+    \futurelet \reserved@a \@xhline
+}
+\newcolumntype{"}{@{\hskip\tabcolsep\vrule width 0.7pt\hskip\tabcolsep}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% Command Section Headers %%%%%%%%%%
+\newcommand{\xfill}[2][1ex]{
+	\dimen0=#2\advance\dimen0 by #1
+	\leaders\hrule height \dimen0 depth -#1\hfill
+}
+\renewcommand{\section}[1]{
+	\vspace{5pt}
+	{\color{Blue}{\large\scshape\raggedright #1\xfill[0pt]{0.5pt}}}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% Command Subsection Headers %%%%%%%
+\renewcommand{\subsection}[4]{
+	\def\temp{#4}
+	\vspace{2pt}
+	{
+		\normalsize
+		{\color{Green} \textbf{#1}} | {\sl #2} \filldate{#3}
+		\ifx\temp\empty
+		\else
+		{
+			\\[0.1em]
+			\fontsize{11}{13.2}\selectfont
+			\sl #4
+		}
+		\fi
+	}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%% Date Formatting %%%%%%%%%%%%%%%%
+\newcommand{\filldate}[1]{\strut\hfill {\small \textit{(#1)}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% Set itemize formatting %%%%%%%%%%%
+\renewcommand\labelitemi{\small$\bullet$}
+\setlist[itemize]{itemsep=-1.3mm, topsep=0.5pt, leftmargin=15pt, after=\vspace{1pt}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% Edit if you want long header %%%%%%%
+% Long Header
+\newif\iflong
+\longtrue
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflong
+	\addtolength{\topmargin}{0 mm}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%				 First Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\normalsize{\notoserifBold{Abhijit Amrendra Kumar}}} \hfill \faEnvelope[regular] \href{mailto:abhijit.amrendra.kumar@gmail.com}{abhijit.amrendra.kumar@gmail.com}
+
+{\small{\notoserif{Software Engineer | Data Platform \& Infra | Agentic AI Enthusiast}}} \hfill \faLinkedin\ \href{https://www.linkedin.com/in/abhijit-amrendra-kumar}{linkedin.com/in/abhijit-amrendra-kumar}
+
+%%%%%%%%%% EDUCATION %%%%%%%%%%%%%%%%%
+\vspace{-1mm}
+\section{Education}
+\begin{itemize}
+    \item Bachelor of Technology in \textbf{Computer Science and Engineering} | IIT Bombay \hfill \textit{(2021-2025)}
+\end{itemize}
+
+%%%%%%%%% Scholastic %%%%%%%%%%%%%%%%%%%%%
+\vspace{-1.5mm}
+\section{Scholastic Achievements}
+\begin{itemize}	
+    \item Awarded the \textbf{National Fellowship} in the Kishore Vaigyanik Protsahan Yojana (\textbf{KVPY} SA stream) exam \filldate{2019}
+    \item Secured \textbf{All India Rank 45} among a total of \textbf{150,000 candidates} appearing for \textit{JEE Advanced 2021} exam \filldate{2021}
+\end{itemize}
+
+%%%%%%%%%% INTERNSHIPS %%%%%%%%%%%%%%%%%
+\vspace{-5.5mm}
+\section{Work Experience}
+
+\subsection{SDE-1 in Data Platform}{Dream 11}{Jul'25 - Ongoing}{}
+\begin{itemize}
+    \item Completed onboarding training in \textbf{Java - Vert.x} for backend and \textbf{React Native} for cross-platform app development.
+    \item Studied distributed infra and streaming platforms through industry case studies and foundational systems papers, including \textit{Uber Data Mesh, Google Dremel, Netflix Streams, Amazon DynamoDB, MapReduce, Google File System}.
+    \item Developed insight into \textbf{Apache Kafka}, large-scale data pipelines, and explored trade-offs in modern data platforms.
+\end{itemize}
+
+\vspace{-5mm}
+\subsection{AI Intern}{Facets Cloud}{Feb'25 - May'25}{}
+\begin{itemize}
+    \item Developed an \textbf{Agentic AI} ticket assistant leveraging retrieval over historical resolutions and \textbf{discussions} to help engineers streamline debugging by identifying \textbf{similar past issues}, \textbf{underlying causes}, and \textbf{resolution steps}.
+    \item Built \textbf{crawlers} to extract company-specific info from \textbf{LinkedIn} and official sites for \textbf{data enrichment} \& \textbf{analysis}.
+    \item Built \textbf{agentic workflows} for \textbf{automated PR reviews} using LLMs to assess code quality \& adherence to guidelines.
+\end{itemize}
+
+\vspace{-5mm}
+\subsection{Advanced Application Engineering Intern}{Accenture Plc.}{May'24 - Jul'24}{}
+\begin{itemize}
+    \item Collaborated with a team of 8 for \textbf{regression testing} of Accenture Hoteling and Capacity Planning services.
+    \item Acquired skills in \textbf{Amazon Web Services} in EC2, S3, DynamoDB, Aurora, performance testing and automation.
+\end{itemize}
+
+\vspace{-5mm}
+\subsection{Full Stack Developer Intern}{MapIT.ai Pvt Ltd}{June'23-Jul'23}{}
+\begin{itemize}
+    \item Developed a bluetooth-based \textbf{beacon positioning \& path tracking} webpage in React and Django Websockets.
+    \item Refined their CMS system \& acquired skills in \textbf{GeoDjango and PostGIS, Django Websockets and Docker}
+\end{itemize}
+
+\vspace{-1mm}
+\subsection{Software Developer}{Chocolate Stay Pvt Ltd}{2023}{}
+\begin{itemize}
+    \item Constructed a backend server for \textbf{hotel bookings, user authentication and real-time updates} in \textbf{NodeJS}.
+    \item Modeled a hotel management/administrative interface in \textbf{ReactJS} and a hotel reservation app in \textbf{Flutter/Dart}.
+\end{itemize}
+
+%%%%%%%%%% Course Projects %%%%%%%%%%%%%%%
+\vspace{-1.5mm}
+\section{Key Projects}
+
+\subsection{Flash: In-Memory Database}{Self Project}{July'24}{}
+\vspace{-0.2mm}
+\begin{itemize}
+    \item Integrated \textbf{data persistence} with point-in-time snapshots and AOF for continuous logging of write operations.
+    \item Built support for data types like strings, lists, \textbf{hashmaps, sorted sets (AVL trees)}, \& \textbf{heaps} for TTL of keys.
+    \item Incorporated support for \textbf{data streams} (sockets in C\texttt{+}\texttt{+}) and \textbf{time series operations} for timestamped data.
+    \item Accelerated performance using \textbf{asynchronous execution} \& \textbf{thread pooling} (atomic operations for consistency).
+\end{itemize}
+\vspace{-5mm}
+
+\subsection{Zeal Interpreter}{Self Project}{June'24}{}
+\vspace{-0.2mm}
+\begin{itemize}
+  \item Developed an interpreter for the Monkey programming language using \textbf{flex} for lexical analysis and \textbf{bison} for parsing.
+  \item Implemented an \textbf{object data model}, alongwith \textbf{first-class functions}, \textbf{higher-order functions} \& \textbf{closures}.
+  \item Constructed a \textbf{bytecode generation} module for efficient program execution on a \textbf{stack-based virtual machine}.
+\end{itemize}
+\vspace{-5mm}
+
+\subsection{SCLP C-like Compiler}{Course Project: Implementation of Programming Languages}{Apr'24}{}
+\vspace{-0.2mm}
+\begin{itemize}
+    \item Developed a C-like language compiler, with \textbf{language constructs} like \textbf{function calls, scopes \& control flow}
+    \item Implemented the different phases of compilation in C\texttt{+}\texttt{+} using \textbf{IRs} to translate high level code into machine code
+    \item Executed register allocation to formulate \textbf{RTL} and implemented call stack functionality to generate \textbf{assembly code}
+\end{itemize}
+\vspace{-5mm}
+
+\subsection{Raytracing Engine}{Self project}{May'23}{}
+\vspace{-0.2mm}
+\begin{itemize}
+    \item Developed a ray-tracing engine in C\texttt{+}\texttt{+}, with features like \textbf{motion blur}, \textbf{texture mapping}, and \textbf{perlin noise}.
+    \item Created realistic Cornell Box scenes by adding \textbf{anti-aliasing}, \textbf{emissive lighting} and dielectric \& metallic materials.
+    \item Optimized rendering with \textbf{Bounding Volume Hierarchies} (grouping objects) and \textbf{Octrees} (spatial partitioning).
+\end{itemize}
+\vspace{-5mm}
+
+\subsection{Enhancing xv6}{Course project: Operating Systems}{Oct'23}{}
+\vspace{-0.2mm}
+\begin{itemize}
+    \item Implemented \textbf{priority-based}, \textbf{round-robin} and \textbf{multiple-queues} scheduling schemes for CPU process scheduling.
+    \item Added \textbf{shared memory} functionality using syscalls and ensured synchronization using \textbf{spinlock} and \textbf{sleeplock}
+    \item Incorporated techniques like \textbf{lazy page allocation} using modified \textbf{page fault} handling and memory allocation
+    \item Integrated \textbf{multi-threading} functionality and implemented \textbf{semaphore} to enforce ordered execution using syscalls
+\end{itemize}
+\vspace{-5mm}
+
+\subsection{Practical Near Neighbor Search via Group Testing}{Course project}{May'24}{}
+\vspace{-0.2mm}
+\begin{itemize}
+    \item Reduced lookup times by atleast \textbf{2.2x} \& memory requirements by atleast \textbf{5\%} for k-nearest neighbour search using \textbf{group testing} and distance-sensitive bloom filters, comparing against SOTA algorithms like \textbf{FLASH} and \textbf{FAISS}. 
+    \item Implemented the described technique in C\texttt{+}\texttt{+} and ran benchmarks on \textbf{PromethION, Webspam, URL} datasets.
+\end{itemize}
+\vspace{-1mm}
+
+% \subsection{Skribbl web game}{Course Project: Software Systems}{November'22}{}
+% \begin{itemize}
+%     \item Developed a multiplayer drawing-and-guessing web game like \textbf{skribbl.io} using \textbf{MERN} stack, \textbf{socket.io} \& \textbf{rough.js}. 
+%     \item Constructed a \textbf{lobby to create/join game rooms}, and \textbf{room-chat} for players to guess the word, using \textbf{socket.io}.
+%     \item Created a room-wise \textbf{synchronized live scribble pad} for players to draw images, using \textbf{rough.js} and react hooks.
+% \end{itemize}
+
+\subsection{Synth Bridge}{InterIIT Tech Competition}{Dec'23}{}
+\vspace{-0.2mm}
+\begin{itemize}
+    \vspace{1pt}
+    \item Developed an AI-based project management system with \textbf{RAG} with MERN, Langchain, Redis, ChromaDB \& AWS
+    \item Secured \textbf{silver rank} in the \textbf{Trumio} problem statement and \textbf{bronze institute rank} in the InterIIT Tech competition
+\end{itemize}
+% \vspace{-1.5mm}
+
+\vspace{-5.5mm}
+\section{Position of Responsibility}
+\vspace{-0.5mm}
+
+\subsection{Seasons Of Code Mentor (11 Mentees)}{Web and Coding Club, IIT Bombay}{May'23 - Jul'23}{}
+
+\vspace{-1mm}
+\subsection{Learner Space Mentor (290+ Mentees)}{Web and Coding Club, IIT Bombay}{May'23 - Jul'23}{}
+
+%%%%%%%%% Certifications %%%%%%%%%%%%%
+\vspace{-1mm}
+\section{Certifications}
+\vspace{-0.5mm}
+
+\subsection{Tensorflow for Deep Learning Bootcamp}{Zero to Mastery}{Jul'23}{}
+
+\vspace{-1mm}
+\subsection{The Complete 2023 Web Development Bootcamp}{Udemy}{Jan'23}{}
+
+\vspace{-1mm}
+\subsection{The Complete Flutter Development Bootcamp with Dart}{Udemy}{Mar'23}{}
+
+\end{document}
+

@@ -1,0 +1,17 @@
+{
+  // Auto-save only when editor loses focus (not on delay)
+  // This prevents frequent saves while typing, which would trigger the compiler
+  "files.autoSave": "onFocusChange",
+
+  // Exclude build artifacts from file watcher to reduce overhead
+  "files.watcherExclude": {
+    "**/.git/**": true,
+    "**/*.aux": true,
+    "**/*.fdb_latexmk": true,
+    "**/*.fls": true,
+    "**/*.log": true,
+    "**/*.out": true,
+    "**/*.pdf": true,
+    "**/*.xdv": true
+  }
+}
