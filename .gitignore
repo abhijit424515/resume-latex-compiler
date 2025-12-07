@@ -4,3 +4,4 @@
 *.log
 *.out
 *.xdv
+.DS_Store

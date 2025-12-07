@@ -10,8 +10,6 @@
 \usepackage{romannum}
 \usepackage{anyfontsize}
 \usepackage{fontawesome5}
-% \usepackage[empty]{fullpage}
-% \usepackage[usenames,dvipsnames]{color}
 \usepackage{hyperref}
 \usepackage[misc]{ifsym}
 \usepackage{array}
@@ -42,7 +40,7 @@
 }
 \renewcommand{\section}[1]{
 	\vspace{5pt}
-	{\color{Blue}{\Large\scshape\raggedright #1\xfill[0pt]{0.5pt}}}
+	{\color{Blue}{\large\scshape\raggedright #1\xfill[0pt]{0.5pt}}}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -125,12 +123,15 @@
 
 \subsection{SDE-1 in Data Platform}{Dream 11}{Jul'25 - Ongoing}{}
 \begin{itemize}
-    \item Completed onboarding training in \textbf{Java - Vert.x} for backend and \textbf{React Native} for cross-platform app development.
-    \item Studied distributed infra and streaming platforms through industry case studies and foundational systems papers, including \textit{Uber Data Mesh, Google Dremel, Netflix Streams, Amazon DynamoDB, MapReduce, Google File System}.
-    \item Developed insight into \textbf{Apache Kafka}, large-scale data pipelines, and explored trade-offs in modern data platforms.
+    \item Researched and developed an experimental \textbf{Iceberg-native ingestion system in C++} as a unified component for high-throughput event streaming, eliminating intermediate layers by enabling direct writes to \textbf{Apache Iceberg tables}; conducted feasibility studies on modern primitives \& solutions to secure collaboration with senior engineering.
+    \item Optimized a cross-platform events SDK by migrating the SerDe layer to \textbf{protobuf} for managed schema evolution.
+    \item Debugged and resolved critical issues in \textbf{large-scale event processing pipelines}, performing deep analysis of distributed system failures to identify root causes and ensure maximum service uptime and data consistency.
+    \item Developed \& deployed \textbf{Spark jobs} with fan-out architecture for ingesting event streams from \textbf{Kafka into multiple Iceberg tables} per tenant, implementing partitioning strategies \& schema evolution for production data lakes.
+    \item Work extensively with \textbf{AWS infrastructure}, provisioning and managing IAM policies, Lambda functions, API Gateway endpoints, RDS instances, Glue catalogs, and Route53 configurations for production data platform services.
+    \item Studied \textbf{distributed systems} through industry implementations like \textit{Uber Data Mesh, Google Dremel, Netflix Streams, Amazon DynamoDB, MapReduce, Google Filesystem}, and analyzed \textbf{Apache Flink} streaming patterns.
 \end{itemize}
-\vspace{-4mm}
 
+% \vspace{-4mm}
 \subsection{AI Intern}{Facets Cloud}{Feb'25 - May'25}{}
 \begin{itemize}
     \item Developed an \textbf{Agentic AI} ticket assistant leveraging retrieval over historical resolutions and \textbf{discussions} to help engineers streamline debugging by identifying \textbf{similar past issues}, \textbf{underlying causes}, and \textbf{resolution steps}.
@@ -138,12 +139,12 @@
     \item Built \textbf{agentic workflows} for \textbf{automated PR reviews} using LLMs to assess code quality \& adherence to guidelines.
 \end{itemize}
 
-\vspace{-4mm}
-\subsection{Advanced Application Engineering Intern}{Accenture Plc.}{May'24 - Jul'24}{}
-\begin{itemize}
-    \item Collaborated with a team of 8 for \textbf{regression testing} of Accenture Hoteling and Capacity Planning services.
-    \item Acquired skills in \textbf{Amazon Web Services} in EC2, S3, DynamoDB, Aurora, performance testing and automation.
-\end{itemize}
+% \vspace{-4mm}
+% \subsection{Advanced Application Engineering Intern}{Accenture Plc.}{May'24 - Jul'24}{}
+% \begin{itemize}
+%     \item Collaborated with a team of 8 for \textbf{regression testing} of Accenture Hoteling and Capacity Planning services.
+%     \item Acquired skills in \textbf{Amazon Web Services} in EC2, S3, DynamoDB, Aurora, performance testing and automation.
+% \end{itemize}
 
 \vspace{-4mm}
 \subsection{Full Stack Developer Intern}{MapIT.ai Pvt Ltd}{June'23-Jul'23}{}
@@ -180,7 +181,7 @@
 \end{itemize}
 \vspace{-4mm}
 
-\subsection{SCLP C-like Compiler}{Course Project: Implementation of Programming Languages}{Apr'24}{Instructor: Prof. Uday Khedkar}
+\subsection{SCLP C-like Compiler}{Course Project: Implementation of Programming Languages}{Apr'24}{}
 \begin{itemize}
     \item Developed a C-like language compiler, with \textbf{language constructs} like \textbf{function calls, scopes \& control flow}
     \item Implemented the different phases of compilation in C\texttt{+}\texttt{+} using \textbf{IRs} to translate high level code into machine code
@@ -196,16 +197,15 @@
 \end{itemize}
 \vspace{-4mm}
 
-\subsection{Enhancing xv6}{Course project: Operating Systems}{Oct'23}{Instructor: Prof. Purusottam Kulkarni}
+\subsection{Enhancing xv6}{Course project: Operating Systems}{Oct'23}{}
 \begin{itemize}
-    \item Implemented \textbf{priority-based}, \textbf{round-robin} and \textbf{multiple-queues} scheduling schemes for CPU process scheduling.
     \item Added \textbf{shared memory} functionality using syscalls and ensured synchronization using \textbf{spinlock} and \textbf{sleeplock}
     \item Incorporated techniques like \textbf{lazy page allocation} using modified \textbf{page fault} handling and memory allocation
     \item Integrated \textbf{multi-threading} functionality and implemented \textbf{semaphore} to enforce ordered execution using syscalls
 \end{itemize}
 \vspace{-4mm}
 
-\subsection{Practical Near Neighbor Search via Group Testing}{Course project}{May'24}{Instructor: Ajit Rajwade}
+\subsection{Practical Near Neighbor Search via Group Testing}{Course project}{May'24}{}
 \begin{itemize}
     \item Reduced lookup times by atleast \textbf{2.2x} \& memory requirements by atleast \textbf{5\%} for k-nearest neighbour search using \textbf{group testing} and distance-sensitive bloom filters, comparing against SOTA algorithms like \textbf{FLASH} and \textbf{FAISS}. 
     \item Implemented the described technique in C\texttt{+}\texttt{+} and ran benchmarks on \textbf{PromethION, Webspam, URL} datasets.

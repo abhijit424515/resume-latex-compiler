@@ -168,7 +168,7 @@ watch_folder() {
             # Filter out .git directories and non-.tex files
             if [ -f "$changed_file" ] && [[ "$changed_file" == *.tex ]] && [[ "$changed_file" != */.git/* ]]; then
                 print_info "Change detected in $folder_name, rebuilding..."
-                build_folder "$folder_path"
+                build_folder "$folder_path" || true
             fi
         done
     elif command -v inotifywait &> /dev/null; then
@@ -179,7 +179,7 @@ watch_folder() {
                 "$folder_path" 2>/dev/null | grep '\.tex$')
             if [ -n "$changed_file" ] && [ -f "$changed_file" ]; then
                 print_info "Change detected in $folder_name, rebuilding..."
-                build_folder "$folder_path"
+                build_folder "$folder_path" || true
             fi
         done
     else
@@ -262,7 +262,7 @@ case "${1:-}" in
                         folder=$(dirname "$changed_file")
                         folder_name=$(basename "$folder")
                         print_info "Change detected in $folder_name, rebuilding..."
-                        build_folder "$folder"
+                        build_folder "$folder" || true
                     fi
                 done
             elif command -v inotifywait &> /dev/null; then
@@ -275,7 +275,7 @@ case "${1:-}" in
                         folder=$(dirname "$changed_file")
                         folder_name=$(basename "$folder")
                         print_info "Change detected in $folder_name, rebuilding..."
-                        build_folder "$folder"
+                        build_folder "$folder" || true
                     fi
                 done
             else
